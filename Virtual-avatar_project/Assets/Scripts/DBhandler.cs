@@ -10,34 +10,34 @@ public class DBhandler : MonoBehaviour {
     string formNick = "InsertNicknameHere";
     string formPass = "InsertFormPasswordHerer";
     WWWForm form;
-    private WWW w;
+    private WWW www;
     string formText;
     string passWarning;
 
-    void Login()
+    IEnumerator Login()
     {
         form = new WWWForm();
         form.AddField("Myform_hash", hash);
         form.AddField("myformnick", formNick);
         form.AddField("myFormPass", formPass);
 
-        w = new WWW("insert address here/scripts/check_user.php", form);
-        
+        www = new WWW("insert address here/scripts/check_user.php", form);
+        yield return www;
 
-        if (w.error != null)
+        if (www.error != null)
         {
             //error getting the result
             Debug.Log("Error 404 user script not found");
         }
         else
         {
-            formText = w.text.Trim();
+            formText = www.text.Trim();
             Debug.Log("Result: " + formText);
             if (formText == "Correct")
             {
                 // Insert login code and stat calls here
             }
-            w.Dispose();
+            www.Dispose();
         }
         formPass = ""; // Clear pass if wrong
         passWarning = "wrong username or password";
