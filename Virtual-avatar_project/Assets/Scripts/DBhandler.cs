@@ -52,45 +52,211 @@ public class DBhandler : MonoBehaviour {
 }
 public class Character
 {
-    public int ID;
-    public string Name;
-    public int Level;
-    public int Coins;
+    private int ID;
+    private string Name;
+    private int Level;
+    private int Coins;
     // Stat list.
-    public float Strength;
-    public float Intelligence;
-    public float Charisma;
-    // List of IDs for avatar bodyparts: Hair/hat, Face, beard, coat, shirt, pants with shoes and accessories.
-    public int Body;
-    public int Hair;
-    public int Face;
-    public int Beard;
-    public int Coat;
-    public int Shirt;
-    public int Gloves;
-    public int Pants;
-    public int Accessories;
+    private float Strength;
+    private float Intelligence;
+    private float Charisma;
+
+    // List of IDs for avatar bodyparts: Hair/hat, Face, beard, coat, shirt, pants with shoes and accessories. 
+    // IMPORTANT --> USE ENUMS FOR GETTING SPRITE IDs <-- IMPORTANT
+    private int Body;
+    private int Hair;
+    private int Face;
+    private int Beard;
+    private int Coat;
+    private int Shirt;
+    private int Gloves;
+    private int Pants;
+    private int Accessories;
     
-
-
-    public Character(int ID, string Name, int Level, float Strength, float Intelligence, float Charisma, int Body, int Hair, int Face, int Beard, int Coat, int Shirt, int Gloves, int Pants, int Accessories, int Coins)
+    public int GetID()
     {
-        this.ID = ID;
-        this.Name = Name;
-        this.Level = Level;
-        this.Strength = Strength;
-        this.Intelligence = Intelligence;
-        this.Charisma = Charisma;
-        this.Body = Body;
-        this.Hair = Hair;
-        this.Face = Face;
-        this.Beard = Beard;
-        this.Coat = Coat;
-        this.Shirt = Shirt;
-        this.Gloves = Gloves;
-        this.Pants = Pants;
-        this.Accessories = Accessories;
-        this.Coins = Coins;
-
+        return ID;
     }
+    public void SetID(int NewID)
+    {
+        ID = NewID;
+    }
+
+    public string GetName()
+    {
+        if (Name != null && Name.Length != 0)
+        {
+            return Name;
+        }
+        else
+        {
+            return "Name not set yet";
+        }
+    }
+    public void SetName(string NewName)
+    {
+        if (NewName.Length != 0)
+        {
+            Name = NewName;
+        }
+    }
+
+    public int GetLevel()
+    {
+        return Level;
+    }
+    public void SetLevel(int NewLevel)
+    {
+        Level = NewLevel;
+    }
+
+    public int GetCoins()
+    {
+        return Coins;
+    }
+    public void SetCoins(int NewCoins)
+    {
+        Coins = NewCoins;
+    }
+
+    public float GetStr()
+    {
+        return Strength;
+    }
+    public void SetStr(float NewStr)
+    {
+        Strength = NewStr;
+    }
+
+    public float GetInt()
+    {
+        return Intelligence;
+    }
+    public void SetInt(float NewInt)
+    {
+        Intelligence = NewInt;
+    }
+
+    public float GetCha()
+    {
+        return Charisma;
+    }
+    public void SetCha(float NewCha)
+    {
+        Charisma = NewCha;
+    }
+
+    public int GetBody()
+    {
+        return Body;
+    }
+    public void SetBody(int NewBody)
+    {
+        Body = NewBody;
+    }
+
+    public int GetHair()
+    {
+        return Hair;
+    }
+    public void SetHair(int NewHair)
+    {
+        Hair = NewHair;
+    }
+
+    public int GetFace()
+    {
+        return Face;
+    }
+    public void SetFace(int NewFace)
+    {
+        Face = NewFace;
+    }
+
+    public int GetBeard()
+    {
+        return Beard;
+    }
+    public void SetBeard(int NewBeard)
+    {
+        Beard = NewBeard;
+    }
+
+    public int GetCoat()
+    {
+        return Coat;
+    }
+    public void SetCoat(int NewCoat)
+    {
+        Coat = NewCoat;
+    }
+
+    public int GetShirt()
+    {
+        return Shirt;
+    }
+    public void SetShirt(int NewShirt)
+    {
+        Shirt = NewShirt;
+    }
+
+    public int GetGloves()
+    {
+        return Gloves;
+    }
+    public void SetGloves(int NewGloves)
+    {
+        Gloves = NewGloves;
+    }
+
+    public int GetPants()
+    {
+        return Pants;
+    }
+    public void SetPants(int NewPants)
+    {
+        Pants = NewPants;
+    }
+
+    public int GetAccessories()
+    {
+        return Accessories;
+    }
+    public void SetAccessories(int NewAccessories)
+    {
+        Accessories = NewAccessories;
+    }
+}
+// Figure this shit out. How it should be done? 1 enum or enum per body part?
+enum Hair
+{
+    
+}
+enum Face
+{
+
+}
+enum Beard
+{
+
+}
+enum Coat
+{
+
+}
+enum Shirt
+{
+
+}
+enum Gloves
+{
+
+}
+enum Pants
+{
+
+}
+enum Accessories
+{
+
 }
