@@ -6,6 +6,17 @@ using UnityEngine.UI;
 
 public class ChangingMenuScript : MonoBehaviour {
 
+    // These are needed for UPDATE to Update squares according to what is WORN by the character 
+    public Image squareHeadDisplay;
+    public Image squareBeardDisplay;
+    public Image squareTopDisplay;
+    public Image squareJacketDisplay;
+    public Image squareLegsDisplay;
+    public Image squareGlovesDisplay;
+    
+
+
+
     //Panel Objects
     public GameObject panel; //Lazy, this is the default (Hair panel)
     public GameObject beardpanel;
@@ -78,6 +89,14 @@ public class ChangingMenuScript : MonoBehaviour {
 
     public void Update()
     {
+
+        squareHeadDisplay.sprite = hair.sprite;
+        squareBeardDisplay.sprite = beard.sprite;
+        squareTopDisplay.sprite = shirt.sprite;
+        squareJacketDisplay.sprite = jacket.sprite;
+        squareLegsDisplay.sprite = leg.sprite;
+        squareGlovesDisplay.sprite = glove.sprite;
+
         for (int i = 0; i < hairs.Length; i++) // HAIR CODE
         {
             if(i == whathair)
@@ -130,9 +149,6 @@ public class ChangingMenuScript : MonoBehaviour {
                 acc.sprite = accs[o];
             }
         }
-
-
-
 
     }
    
