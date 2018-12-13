@@ -1,15 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ChangingAppearance : MonoBehaviour {
 
     public SpriteRenderer part;
     public Sprite[] options;
     public int index;
+    public int index2;
+    public GameObject[] BodyPanels;
+    public GameObject Bodypanel;
 
 
-    private void Update()
+     void Update()
     {
         for (int i = 0; i < options.Length; i++)
         {
@@ -17,6 +21,14 @@ public class ChangingAppearance : MonoBehaviour {
             {
                 part.sprite = options[i];
             }
+        }
+        for (int u = 0; u < BodyPanels.Length; u++)
+        {
+            if(u == index)
+            {
+                Bodypanel = BodyPanels[u];
+            }
+
         }
     }
     public void Swap()
@@ -28,6 +40,14 @@ public class ChangingAppearance : MonoBehaviour {
         else
         {
             index = 0;
+        }
+        if (index2 < BodyPanels.Length - 1)
+        {
+            index2++;
+        }
+        else
+        {
+            index2 = 0;
         }
     }
 }
