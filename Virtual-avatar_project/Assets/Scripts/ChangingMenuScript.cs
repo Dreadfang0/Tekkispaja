@@ -13,6 +13,7 @@ public class ChangingMenuScript : MonoBehaviour {
     public Image squareJacketDisplay;
     public Image squareLegsDisplay;
     public Image squareGlovesDisplay;
+    public Image squareAccDisplay;
     
 
 
@@ -96,6 +97,7 @@ public class ChangingMenuScript : MonoBehaviour {
         squareJacketDisplay.sprite = jacket.sprite;
         squareLegsDisplay.sprite = leg.sprite;
         squareGlovesDisplay.sprite = glove.sprite;
+        squareAccDisplay.sprite = acc.sprite;
 
         for (int i = 0; i < hairs.Length; i++) // HAIR CODE
         {

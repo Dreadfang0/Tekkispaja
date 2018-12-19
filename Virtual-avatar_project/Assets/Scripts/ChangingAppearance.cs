@@ -10,7 +10,10 @@ public class ChangingAppearance : MonoBehaviour {
     public int index;
     public int index2;
     public GameObject[] BodyPanels;
-    public GameObject Bodypanel;
+    public GameObject msBodypanel;
+    public GameObject fBodypanel;
+    public GameObject mmBodypanel; // Code for possibility of SWAP() integration on switching the panels along with bodytype (?)
+    public GameObject cBodypanel;
 
 
      void Update()
@@ -26,7 +29,8 @@ public class ChangingAppearance : MonoBehaviour {
         {
             if(u == index)
             {
-                Bodypanel = BodyPanels[u];
+               // msBodypanel.SetActive(false); // Code for possibility of SWAP() integration on switching the panels along with bodytype (?)
+               // fBodypanel.SetActive(true);
             }
 
         }
@@ -41,9 +45,10 @@ public class ChangingAppearance : MonoBehaviour {
         {
             index = 0;
         }
+
         if (index2 < BodyPanels.Length - 1)
-        {
-            index2++;
+        {                 
+            index2++; // Code for possibility of SWAP() integration on switching the panels along with bodytype (?)
         }
         else
         {
